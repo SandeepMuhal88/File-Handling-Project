@@ -20,7 +20,7 @@ def read_file(filename):
         print(f"Error: could not read file {filename}")
 
 
-def append_file(filename, text):
+def ADD_Text_file(filename, text):
     try:
         with open(filename, "a") as f:
             f.write(text)
