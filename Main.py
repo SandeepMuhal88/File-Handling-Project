@@ -1,7 +1,7 @@
 # First project
 import os
 
-
+#Create File
 def create_file(filename):
     try:
         with open(filename, "w") as f:
@@ -10,7 +10,7 @@ def create_file(filename):
     except IOError:
         print(f"Error: could not create file {filename}")
 
-
+#Read File
 def read_file(filename):
     try:
         with open(filename, "r") as f:
@@ -19,7 +19,7 @@ def read_file(filename):
     except IOError:
         print(f"Error: could not read file {filename}")
 
-
+# Add Text to File
 def append_file(filename, text):
     try:
         with open(filename, "a") as f:
@@ -28,7 +28,7 @@ def append_file(filename, text):
     except IOError:
         print(f"Error: could not append to file {filename}")
 
-
+# Rename the file
 def rename_file(filename, new_filename):
     try:
         os.rename(filename, new_filename)
@@ -36,13 +36,40 @@ def rename_file(filename, new_filename):
     except IOError:
         print(f"Error: could not rename file {filename}")
 
-
+#Delete the file
 def delete_file(filename):
     try:
         os.remove(filename)
         print(f"File {filename} deleted successfully.")
     except IOError:
         print(f"Error: could not delete file {filename}")
+
+# Find the word in file
+def find_word(filename, word):
+    try:
+        with open(filename, "r") as f:
+            contents = f.read()
+            if word in contents:
+                print(f"The word {word} found in file {filename}.")
+            else:
+                print(f"The word {word} not found in file {filename}.")
+    except IOError:
+        print(f"Error: could not read file {filename}")
+        
+# replace the word
+def replace_word(filename, word, new_word):
+    try:
+        with open(filename, "r") as f:
+            contents = f.read()
+            if word in contents:
+                new_contents = contents.replace(word, new_word)
+                return
+    except IOError:
+            
+        
+            
+            
+# Delete the word
 
 
 def menu():
